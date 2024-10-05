@@ -1,0 +1,31 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  text-align: center;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 20px 20px;
+}
+
+video {
+  width: 30vw;
+  height: 20vw;
+  margin: 5px;
+  background: #3f3f3f;
+}
+
+.videos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,3 +1,0 @@
-# Sessio
-
-Videoconference platform

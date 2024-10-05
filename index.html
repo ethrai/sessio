@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title></title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="videos">
+    <span>
+      <h3>Your camera</h3>
+      <video id="localVideo" autoplay playsinline></video>
+    </span>
+    <span>
+      <h3>Another peer's camera</h3>
+      <video id="remoteVideo" autoplay playsinline></video>
+    </span>
+  </div>
+  <div>
+    <h2>Enable webcam</h2>
+    <button id="cameraOnBtn" type="button">Enable webcam</button>
+  </div>
+  <div>
+    <h2>Create session</h2>
+    <button id="createOfferBtn">Start session</button>
+  </div>
+  <div>
+    <h2>Offer</h2>
+    <textarea id="offer" rows="10" cols="120"></textarea>
+    <button id="createAnswerBtn">Create answer</button>
+    <h2>Answer</h2>
+    <textarea id="answer" rows="10" cols="120"></textarea>
+    <button id="addAnswerBtn">Add answer</button>
+  </div>
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>
