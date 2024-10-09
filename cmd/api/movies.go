@@ -6,7 +6,7 @@ import (
 )
 
 func (app *application) getMovieHandler(w http.ResponseWriter, r *http.Request) {
-	id, err := readIDParam(r)
+	id, err := app.readIDParam(r)
 	if err != nil {
 		http.NotFound(w, r)
 		return
