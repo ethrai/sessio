@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"net/http"
 	"strconv"
 )
@@ -13,13 +12,10 @@ func (app *application) healthCheckHandler(w http.ResponseWriter, r *http.Reques
 		"port":        strconv.Itoa(app.cfg.port),
 	}
 
-	json, err := json.Marshal(&data)
+  err := app.JSON(w, M{"data": data}, http.StatusOK, nil)
 	if err != nil {
 		app.logger.Error(err.Error())
-		http.Error(w, "Server encountered error", http.StatusInternalServerError)
+		http.Error(w, "Server encountered an error", http.StatusInternalServerError)
+		return
 	}
-
-	w.Header().Set("Content-Type", "application/json")
-
-	w.Write(json)
 }
