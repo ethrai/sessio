@@ -21,6 +21,8 @@ func (app *application) readIDParam(r *http.Request) (int64, error) {
 	return id, nil
 }
 
+// JSON is helper method for responding to clients with json. It accepts data
+// and status code as well as additional headers if present.
 func (app *application) JSON(
 	w http.ResponseWriter,
 	data any,

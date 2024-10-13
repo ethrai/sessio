@@ -12,7 +12,7 @@ type M map[string]any
 func (app *application) getMovieHandler(w http.ResponseWriter, r *http.Request) {
 	id, err := app.readIDParam(r)
 	if err != nil {
-		http.NotFound(w, r)
+    app.notFoundResponse(w, r)
 		return
 	}
 
@@ -29,9 +29,8 @@ func (app *application) getMovieHandler(w http.ResponseWriter, r *http.Request) 
 
 	err = app.JSON(w, M{"movie": movie}, http.StatusOK, nil)
 	if err != nil {
-		app.logger.Error(err.Error())
-		http.Error(w, "server error", http.StatusInternalServerError)
-		return
+    app.serverErrorResponse(w, r, err)
+    return
 	}
 }
 
