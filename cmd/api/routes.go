@@ -14,7 +14,7 @@ func (app *application) routes() http.Handler {
 	router.HandlerFunc(http.MethodPost, "/v1/movies", app.createMovieHandler)
 
 	router.MethodNotAllowed = http.HandlerFunc(app.methodNotAllowed)
-  router.NotFound = http.HandlerFunc(app.notFoundResponse)
+	router.NotFound = http.HandlerFunc(app.notFoundResponse)
 
-	return router
+	return app.recoverPanicMw(router)
 }
